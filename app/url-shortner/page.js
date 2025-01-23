@@ -21,11 +21,10 @@ const UrlShortner = () => {
   // Get all the short URLs by hitting a GET request to the API
   useEffect(() => {
     const getShortUrls = async () => {
-      const response = await fetch("http://localhost:3000/api/shorturls");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/shorturls`);
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result.data);
         setMyShortUrls(result.data);
       }
     };
