@@ -16,7 +16,7 @@ export const generateShortUrl = async (params) => {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/api/generate", requestOptions);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions);
 
     // Successful response
     if (response.ok) {

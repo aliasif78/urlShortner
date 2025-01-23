@@ -12,7 +12,7 @@ import { generateShortUrl } from "@/actions/form";
 // Dependancies
 import { toast } from "react-toastify";
 
-const urlShortner = () => {
+const UrlShortner = () => {
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [generatedUrl, setGeneratedUrl] = useState("");
@@ -68,7 +68,7 @@ const urlShortner = () => {
     }
 
     // Show the new generated URL
-    setGeneratedUrl(`http://localhost:3000/${shortUrl}`);
+    setGeneratedUrl(`${process.env.NEXT_PUBLIC_HOST}${shortUrl}`);
 
     // Reset the form
     setUrl("");
@@ -105,4 +105,4 @@ const urlShortner = () => {
   );
 };
 
-export default urlShortner;
+export default UrlShortner;

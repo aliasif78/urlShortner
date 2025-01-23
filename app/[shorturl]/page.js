@@ -13,7 +13,7 @@ export default async function Page({ params }) {
   const existingDoc = await collection.findOne({ shortUrl: shortUrl });
 
   if (!existingDoc) {
-    return redirect("http://localhost:3000/");
+    return redirect(`${process.env.NEXT_PUBLIC_HOST}`);
   }
 
   // Redirect to the original URL
